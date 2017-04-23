@@ -3,7 +3,7 @@ package de.inovex.microservices.product.consumer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
+//import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,8 +12,8 @@ import de.inovex.microservices.product.consumer.adapter.*;
 import de.inovex.microservices.product.consumer.model.*;
 import java.net.URI;
 
-@SpringBootApplication
-@ComponentScan(basePackages = {"de.inovex.microservices"})
+@SpringBootApplication(scanBasePackageClasses = Application.class)
+//@ComponentScan(basePackages = {"de.inovex.microservices"})
 @RestController
 public class Application {
 

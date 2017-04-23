@@ -2,7 +2,6 @@ package de.inovex.microservices.productdetails;
 
 import static io.restassured.RestAssured.when;
 import static org.hamcrest.Matchers.*;
-
 import org.apache.http.HttpStatus;
 import org.hamcrest.Matchers;
 import org.junit.Before;
@@ -12,7 +11,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import io.restassured.RestAssured;
-import de.inovex.microservices.productdetails.Application;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
