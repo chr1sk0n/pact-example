@@ -1,6 +1,6 @@
-package de.inovex.microservices.product.adapter;
+package de.inovex.microservices.product.consumer.adapter;
 
-import de.inovex.microservices.product.model.ProductDetails;
+import de.inovex.microservices.product.consumer.model.ProductDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -17,3 +17,4 @@ public class ProductDetailsFetcher {
     }
 
 }
+

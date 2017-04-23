@@ -1,20 +1,19 @@
 package de.inovex.microservices.product;
 
-import au.com.dius.pact.consumer.ConsumerPactBuilder;
+//import au.com.dius.pact.consumer.ConsumerPactBuilder;
 import au.com.dius.pact.consumer.ConsumerPactTest;
+import au.com.dius.pact.consumer.dsl.PactDslWithProvider;
 import au.com.dius.pact.model.PactFragment;
-import de.inovex.microservices.product.adapter.ProductDetailsFetcher;
-import de.inovex.microservices.product.model.ProductDetails;
-
+import de.inovex.microservices.product.consumer.adapter.ProductDetailsFetcher;
+import de.inovex.microservices.product.consumer.model.ProductDetails;
 import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
-
 import static junit.framework.TestCase.assertEquals;
 
 public class ProductDetailsServiceConsumerTest extends ConsumerPactTest {
 
-    @Override
+    /*@Override
     protected PactFragment createFragment(ConsumerPactBuilder.PactDslWithProvider builder) {
         Map<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json;charset=UTF-8");
@@ -27,6 +26,20 @@ public class ProductDetailsServiceConsumerTest extends ConsumerPactTest {
                 .body("{\"id\":1,\"description\":\"This is the description for product 1\"}")
                 .toFragment();
 
+    }*/
+
+    @Override
+    protected PactFragment createFragment(PactDslWithProvider builder) {
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Content-Type", "application/json;charset=UTF-8");
+        return builder.uponReceiving("a request for product details")
+                .path("/productdetails/1")
+                .method("GET")
+                .willRespondWith()
+                .headers(headers)
+                .status(200)
+                .body("{\"id\":1,\"description\":\"This is the description for product 1\"}")
+                .toFragment();
     }
 
     @Override

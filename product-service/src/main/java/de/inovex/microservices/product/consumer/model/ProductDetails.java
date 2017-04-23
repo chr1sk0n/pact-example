@@ -1,4 +1,4 @@
-package de.inovex.microservices.product.model;
+package de.inovex.microservices.product.consumer.model;
 
 public class ProductDetails {
 
